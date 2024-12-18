@@ -37,3 +37,86 @@
 #
 #
 #########################################################################################################################################
+
+
+#Imports
+from random import randint, choice
+import time
+from ScreenDisplay import *
+
+#Initialized variables
+Score = 0
+Hearts = 3
+
+
+
+#Functions
+def timedDeathrun():
+    global Mode, Score, Hearts
+    df.widgetDestroy()
+    df.textDisplay("Mode: Timed Deathrun", "header2", 0,10)
+    df.buttonMake("quit",modeSelection, "#f10f0f", "normal", 2, 10, 0, 0)
+    
+def speedRun():
+    global Mode, Score, Hearts
+    df.widgetDestroy()
+    def hud():
+        df.textDisplay("Mode: Speed Run", "header2", 0,0)
+        df.textDisplay("Score: " + str(Score), "header2", 0,20)
+        df.buttonMake("Quit",modeSelection, "#f10f0f", "header2", 2, 10, 0, 0)
+    
+        
+        
+        
+        
+        
+        
+    hud()
+
+def infinate():
+    global Mode, Score, Hearts
+    df.widgetDestroy()
+    df.textDisplay("Mode: Infinate", "header2", 0,10)
+    df.buttonMake("quit",modeSelection, "#f10f0f", "header2", 2, 10, 0, 0)
+    
+    
+    
+df = DisplayFunctions
+    
+def modeSelection():
+    global Mode, Score, Hearts
+    # Destroy the start button
+    df.widgetDestroy()
+    # Create buttons for each game mode
+    df.textDisplay("Welcome to the Math Trials!\n Ready to become a Math-ster?", "header1",150, 0)
+
+    df.buttonMake("Speed Run",speedRun, "#ccffcc", "normal", 5, 45, 100, 10)
+    df.buttonMake("Infinate",infinate, "#ccccff", "normal", 5, 45, 10, 10)
+    df.buttonMake("Timed Deathrun",timedDeathrun, "#ffcccc", "normal", 5, 45, 10, 10)
+        
+    
+    
+    
+    
+    
+    #252B2E
+    
+
+def startGame():
+    global df
+    global Mode, Score, Hearts
+    df.textDisplay("Welcome to the Math Trials!\n Ready to become a Math-ster?", "header1",150, 0)
+    df.buttonMake("Start",modeSelection, "#ffffff","header2",5, 45, 170, 0)
+    df.TkRun()
+    
+
+#start the game with while main == main
+if __name__ == "__main__":
+    #Initialize the Screen for tk inter
+    df = DisplayFunctions()
+    
+    startGame()
+    
+    
+
+# Mode = choice(["timedDeathrun", "speedRun", "infinate"])
