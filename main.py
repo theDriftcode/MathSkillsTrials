@@ -54,8 +54,9 @@ Hearts = 3
 def timedDeathrun():
     global Mode, Score, Hearts
     df.widgetDestroy()
-    df.textDisplay("Mode: Timed Deathrun", "header2", 0,10)
-    df.buttonMake("quit",modeSelection, "#f10f0f", "normal", 2, 10, 0, 0)
+    df.textDisplay("Mode: Timed Deathrun", "header2", 0,0)
+    df.textDisplay("Score: " + str(Score), "header2", 0,20)
+    df.buttonMake("Quit",modeSelection, "#f10f0f", "header2", 2, 10, 0, 0)
     
 def speedRun():
     global Mode, Score, Hearts
@@ -76,8 +77,9 @@ def speedRun():
 def infinate():
     global Mode, Score, Hearts
     df.widgetDestroy()
-    df.textDisplay("Mode: Infinate", "header2", 0,10)
-    df.buttonMake("quit",modeSelection, "#f10f0f", "header2", 2, 10, 0, 0)
+    df.textDisplay("Mode: Infinate", "header2", 0,00)
+    df.textDisplay("Score: " + str(Score), "header2", 0,20)
+    df.buttonMake("Quit",modeSelection, "#f10f0f", "header2", 2, 10, 0, 0)
     
     
     
