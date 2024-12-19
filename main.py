@@ -54,7 +54,7 @@ Hearts = 3
 def timedDeathrun():
     global Mode, Score, Hearts
     df.widgetDestroy()
-    df.textDisplay("Mode: Timed Deathrun", "header2", 0,0)
+    df.textDisplay("Mode: Timed Deathrun", "header2", 0,1)
     df.textDisplay("Score: " + str(Score), "header2", 0,20)
     df.buttonMake("Quit",modeSelection, "#f10f0f", "header2", 2, 10, 0, 0)
     
